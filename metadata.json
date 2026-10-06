@@ -1,0 +1,6 @@
+{
+  "name": "Raqib Aalam — Elite Athletic Club & Strength Performance",
+  "description": "India's premier strength training, functional hypertrophy, personal coaching & athletic performance gym founded by Coach Raqib Aalam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

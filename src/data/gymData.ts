@@ -454,3 +454,182 @@ export const SAMPLE_MEMBER: MemberUser = {
     { exercise: 'Ice Cold Plunge Bath (Recovery)', sets: '1 session', reps: '4 minutes', targetWeight: '4°C Temp' }
   ]
 };
+
+export const INITIAL_ADMIN_MEMBERS = [
+  {
+    id: 'MEM-01',
+    name: 'Karanveer Malhotra',
+    email: 'karanveer.m@outlook.com',
+    phone: '+91 98112 34567',
+    tier: 'Pro Performance' as const,
+    status: 'Active' as const,
+    joinedDate: '2025-08-14',
+    assignedCoach: 'Coach Raqib Aalam',
+    streakDays: 18,
+    lastCheckIn: 'Today, 06:45 AM',
+    monthlyFee: 8499,
+  },
+  {
+    id: 'MEM-02',
+    name: 'Arjun Sharma',
+    email: 'arjun.sharma@techlead.in',
+    phone: '+91 98223 45678',
+    tier: 'VIP Mentorship' as const,
+    status: 'Active' as const,
+    joinedDate: '2025-05-10',
+    assignedCoach: 'Coach Raqib Aalam',
+    streakDays: 32,
+    lastCheckIn: 'Today, 07:15 AM',
+    monthlyFee: 18999,
+  },
+  {
+    id: 'MEM-03',
+    name: 'Priyanshi Verma',
+    email: 'priyanshi.arch@gmail.com',
+    phone: '+91 98711 23456',
+    tier: 'Pro Performance' as const,
+    status: 'Active' as const,
+    joinedDate: '2025-09-01',
+    assignedCoach: 'Kavita Singh (CSCS)',
+    streakDays: 14,
+    lastCheckIn: 'Yesterday, 06:10 PM',
+    monthlyFee: 8499,
+  },
+  {
+    id: 'MEM-04',
+    name: 'Dr. Aisha Khan',
+    email: 'aisha.khan.med@hospital.org',
+    phone: '+91 98334 56789',
+    tier: 'VIP Mentorship' as const,
+    status: 'Active' as const,
+    joinedDate: '2025-04-18',
+    assignedCoach: 'Coach Raqib Aalam',
+    streakDays: 21,
+    lastCheckIn: 'Today, 06:00 AM',
+    monthlyFee: 18999,
+  },
+  {
+    id: 'MEM-05',
+    name: 'Rohan Mehta',
+    email: 'rohan.mehta@vcpartners.com',
+    phone: '+91 98445 67890',
+    tier: 'VIP Mentorship' as const,
+    status: 'Frozen' as const,
+    joinedDate: '2025-03-22',
+    assignedCoach: 'Coach Raqib Aalam',
+    streakDays: 0,
+    lastCheckIn: '10 days ago (Travel Freeze)',
+    monthlyFee: 18999,
+  },
+  {
+    id: 'MEM-06',
+    name: 'Kabir Oberoi',
+    email: 'kabir.o@fintech.co',
+    phone: '+91 98556 78901',
+    tier: 'Club Athlete' as const,
+    status: 'Active' as const,
+    joinedDate: '2025-11-05',
+    assignedCoach: 'Sameer Sheikh',
+    streakDays: 8,
+    lastCheckIn: 'Today, 08:30 AM',
+    monthlyFee: 4999,
+  },
+  {
+    id: 'MEM-07',
+    name: 'Rhea Kapoor',
+    email: 'rhea.k@designstudio.in',
+    phone: '+91 98667 89012',
+    tier: 'Club Athlete' as const,
+    status: 'Expired' as const,
+    joinedDate: '2025-06-12',
+    assignedCoach: 'Dr. Tariq Anwar',
+    streakDays: 0,
+    lastCheckIn: '18 days ago',
+    monthlyFee: 4999,
+  }
+];
+
+export const INITIAL_LEADS = [
+  {
+    id: 'LEAD-101',
+    name: 'Devendra Nair',
+    email: 'dev.nair@adagency.com',
+    phone: '+91 98912 34567',
+    branch: 'Delhi NCR (Greater Kailash II)',
+    slot: 'Early Bird (06:00 - 08:30 AM)',
+    goal: 'Strength & Hypertrophy',
+    submittedAt: 'Today, 08:42 AM',
+    status: 'Pending' as const,
+    notes: 'Interested in Eleiko competition squat coaching and protein macro sheet.'
+  },
+  {
+    id: 'LEAD-102',
+    name: 'Meera Sengupta',
+    email: 'meera.s@lawfirm.in',
+    phone: '+91 98101 23456',
+    branch: 'Delhi NCR (Greater Kailash II)',
+    slot: 'Prime Evening (05:30 - 08:30 PM)',
+    goal: 'Posture & Rehab',
+    submittedAt: 'Today, 07:15 AM',
+    status: 'Contacted' as const,
+    notes: 'Cervical spine stiffness from long litigation hours. Sent physio questionnaire.'
+  },
+  {
+    id: 'LEAD-103',
+    name: 'Siddharth Roy',
+    email: 'sid.roy@startup.io',
+    phone: '+91 98202 34567',
+    branch: 'Bengaluru (Indiranagar)',
+    slot: 'Mid-Day (11:00 AM - 02:00 PM)',
+    goal: '1-on-1 Raqib Mentorship',
+    submittedAt: 'Yesterday, 09:20 PM',
+    status: 'Confirmed' as const,
+    notes: 'Founder wanting 45-min executive protocol. Scheduled trial for Thursday.'
+  },
+  {
+    id: 'LEAD-104',
+    name: 'Tanvi Sethi',
+    email: 'tanvi.sethi@fashion.in',
+    phone: '+91 98303 45678',
+    branch: 'Mumbai (Bandra West)',
+    slot: 'Early Bird (06:00 - 08:30 AM)',
+    goal: 'Metabolic Fat Loss',
+    submittedAt: 'Yesterday, 04:10 PM',
+    status: 'Attended' as const,
+    notes: 'Completed InBody scan (24% BF). Considering Pro Performance quarterly plan.'
+  }
+];
+
+export const INITIAL_INBODY_SCANS = [
+  {
+    id: 'SCAN-201',
+    memberName: 'Arjun Sharma',
+    date: '2026-03-28',
+    weightKg: 75.8,
+    skeletalMuscleKg: 38.4,
+    bodyFatPercent: 13.2,
+    visceralFatLevel: 4,
+    coachRemarks: 'Visceral fat dropped 2 levels. Quad cross-section +1.2cm. Ready for peaking mesocycle.'
+  },
+  {
+    id: 'SCAN-202',
+    memberName: 'Priyanshi Verma',
+    date: '2026-03-25',
+    weightKg: 58.2,
+    skeletalMuscleKg: 26.1,
+    bodyFatPercent: 17.5,
+    visceralFatLevel: 3,
+    coachRemarks: 'Posterior chain density increased. Excellent recovery markers.'
+  },
+  {
+    id: 'SCAN-203',
+    memberName: 'Karanveer Malhotra',
+    date: '2026-03-22',
+    weightKg: 79.5,
+    skeletalMuscleKg: 39.2,
+    bodyFatPercent: 14.8,
+    visceralFatLevel: 5,
+    coachRemarks: 'Weight trend consistent. Increasing carb refeed by 50g on squat days.'
+  }
+];
+

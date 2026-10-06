@@ -7,7 +7,8 @@ export type PageView =
   | 'facilities' 
   | 'schedule' 
   | 'contact' 
-  | 'portal';
+  | 'portal'
+  | 'admin';
 
 export interface Program {
   id: string;
@@ -95,3 +96,42 @@ export interface MemberUser {
   weightProgress: { week: string; weight: number }[];
   todayWorkout: { exercise: string; sets: string; reps: string; targetWeight: string }[];
 }
+
+export interface LeadTrial {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  branch: string;
+  slot: string;
+  goal: string;
+  submittedAt: string;
+  status: 'Pending' | 'Contacted' | 'Confirmed' | 'Attended' | 'Converted';
+  notes?: string;
+}
+
+export interface AdminMember {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  tier: 'Club Athlete' | 'Pro Performance' | 'VIP Mentorship';
+  status: 'Active' | 'Frozen' | 'Expired';
+  joinedDate: string;
+  assignedCoach: string;
+  streakDays: number;
+  lastCheckIn: string;
+  monthlyFee: number;
+}
+
+export interface InBodyScanRecord {
+  id: string;
+  memberName: string;
+  date: string;
+  weightKg: number;
+  skeletalMuscleKg: number;
+  bodyFatPercent: number;
+  visceralFatLevel: number;
+  coachRemarks: string;
+}
+

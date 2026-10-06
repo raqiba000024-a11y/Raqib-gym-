@@ -109,6 +109,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal }) => {
                   Weekly Schedule
                 </button>
               </li>
+              <li>
+                <button onClick={() => onNavigate('admin')} className="text-amber-400 hover:text-amber-300 font-semibold transition-colors cursor-pointer">
+                  Admin Command
+                </button>
+              </li>
             </ul>
           </div>
 

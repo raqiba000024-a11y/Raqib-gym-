@@ -12,6 +12,7 @@ import { FacilitiesView } from './views/FacilitiesView';
 import { ScheduleView } from './views/ScheduleView';
 import { ContactView } from './views/ContactView';
 import { PortalView } from './views/PortalView';
+import { AdminView } from './views/AdminView';
 import { TrialModal } from './components/TrialModal';
 import { AuthModal } from './components/AuthModal';
 import { ProgramModal } from './components/ProgramModal';
@@ -89,24 +90,30 @@ function AppContent() {
         ? 'bg-neutral-950 text-neutral-100' 
         : 'bg-neutral-900 text-neutral-100'
     }`}>
-      {/* Top Bar strictly obeying Top Bar Contract */}
-      <Navbar
-        currentPage={currentPage}
-        onNavigate={navigateTo}
-        onOpenTrialModal={() => handleOpenTrial()}
-        onOpenAuthModal={() => {
-          if (currentUser) {
-            navigateTo('portal');
-          } else {
-            setAuthModalOpen(true);
-          }
-        }}
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
+      {/* Top Bar strictly obeying Top Bar Contract (hidden on dedicated admin page for fullscreen command) */}
+      {currentPage !== 'admin' && (
+        <Navbar
+          currentPage={currentPage}
+          onNavigate={navigateTo}
+          onOpenTrialModal={() => handleOpenTrial()}
+          onOpenAuthModal={() => {
+            if (currentUser) {
+              navigateTo('portal');
+            } else {
+              setAuthModalOpen(true);
+            }
+          }}
+          onOpenAdmin={() => navigateTo('admin')}
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+      )}
 
       {/* Main View Container */}
       <main className="flex-1 w-full">
+        {currentPage === 'admin' && (
+          <AdminView onBackToWebsite={() => navigateTo('home')} />
+        )}
         {currentPage === 'home' && (
           <HomeView
             onNavigate={navigateTo}
@@ -147,11 +154,13 @@ function AppContent() {
         )}
       </main>
 
-      {/* Quiet Footer */}
-      <Footer
-        onNavigate={navigateTo}
-        onOpenLegal={(type) => setLegalType(type)}
-      />
+      {/* Quiet Footer (hidden on admin page) */}
+      {currentPage !== 'admin' && (
+        <Footer
+          onNavigate={navigateTo}
+          onOpenLegal={(type) => setLegalType(type)}
+        />
+      )}
 
       {/* Modals */}
       <TrialModal

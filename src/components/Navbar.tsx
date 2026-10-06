@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
-import { Sun, Moon, Menu, X, User } from 'lucide-react';
+import { Sun, Moon, Menu, X, User, Shield } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageView;
   onNavigate: (page: PageView) => void;
   onOpenTrialModal: () => void;
   onOpenAuthModal: () => void;
+  onOpenAdmin: () => void;
   theme: 'dark' | 'light';
   toggleTheme: () => void;
 }
@@ -16,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
   onOpenTrialModal,
   onOpenAuthModal,
+  onOpenAdmin,
   theme,
   toggleTheme,
 }) => {
@@ -75,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Zone 3: 1-2 primary actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme mode"
@@ -85,8 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
+            onClick={onOpenAdmin}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-amber-400 hover:text-neutral-950 hover:bg-amber-400 bg-neutral-900 border border-amber-400/30 rounded-lg transition-colors cursor-pointer whitespace-nowrap"
+            title="Open Admin Control Center"
+          >
+            <Shield className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Admin Panel</span>
+          </button>
+
+          <button
             onClick={onOpenAuthModal}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors cursor-pointer whitespace-nowrap"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors cursor-pointer whitespace-nowrap"
           >
             <User className="w-3.5 h-3.5" />
             <span>Member Portal</span>
@@ -131,6 +142,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             })}
             <div className="pt-3 mt-2 border-t border-neutral-900 flex flex-col gap-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAdmin();
+                }}
+                className="w-full text-center py-2.5 rounded-lg text-sm font-bold text-amber-400 bg-neutral-900 hover:bg-neutral-800 border border-amber-400/30"
+              >
+                Admin Panel Command
+              </button>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
